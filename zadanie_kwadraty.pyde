@@ -17,8 +17,8 @@ class PasiastyKwadrat(Kwadrat):
             _xLinii_ +=space
             
 class KraciastyKwadrat(Kwadrat): 
-    def sketchKraciasty(self, x, y, paski): 
-        Kwadrat.sketch(self, x, y) 
+    def sketchKraciasty(self, x, y, paski):  # nie tyle kraciasty, co w paski poziome zamiast pionowych
+        Kwadrat.sketch(self, x, y) #gdybyś tu dałą pasiasty i odziedziczyłą z niego, wówczas mógłby wyjść kraciasty
         space = self.bok/paski 
         _yLinii_ = 0 
         fill(400,90,70,80)
@@ -41,6 +41,8 @@ def setup():
     duzyPasiastyKwadrat  = PasiastyKwadrat(120.0)
     duzyPasiastyKwadrat.sketchPasiasty(300, 50, 12)
     duzyPasiastyKwadrat.sketch(350, 300) # na obiekcie typu klasy pochodnej można wywołać metodę klasy bazowej ( rysujemy kwadrat bez pasków )
-    malyKraciastyKwadrat = KraciastyKwadrat(120.0)
+    malyKraciastyKwadrat = KraciastyKwadrat(120.0) # miały być dwa obiekty
     malyKraciastyKwadrat.sketchKraciasty(300,50,12)
-    malyKraciastyKwadrat.sketchKraciasty(50,360,10)
+    malyKraciastyKwadrat.sketchKraciasty(50,360,10)#obiekt jest ten sam, tylko drugi raz narysowany
+    
+    #1,75 pkt
